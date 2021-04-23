@@ -21,8 +21,6 @@ function Player(props) {
             props.setCurrentSongIndex(() => {
                 let temp = props.currentSongIndex;
                 temp++;
-                audioEl.current.play()
-
                 if (temp > props.songs.length - 1) {
                     temp = 0
                 }
@@ -33,8 +31,6 @@ function Player(props) {
             props.setCurrentSongIndex(() => {
                 let temp = props.currentSongIndex;
                 temp--;
-                audioEl.current.play()
-
                 if (temp < 0) {
                     temp = props.songs.length - 1
                 }
