@@ -1,3 +1,3 @@
 # Music App
 
-![plot](./music.png)
+![plot](./music.PNG)
