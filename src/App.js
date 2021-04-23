@@ -18,7 +18,6 @@ function App() {
       }
     })
   }, [currentSongIndex])
-  console.log(Songs)
   return (
     <div className="App">
       <Player

@@ -73,8 +73,8 @@ body {
     top: -12px;
     left: -12px;
     border-radius: 50%;
-    z-index: 100;
-    border: 10px solid #AAA;
+    border: 10px solid;
+    filter: blur(1px) opacity(0.8);
     animation: play 10s alternate 0s infinite;
 }
 
@@ -131,6 +131,14 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.c-player--control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
 .c-player--controls .play-btn {
@@ -159,10 +167,50 @@ body {
     transition: color 0.5s ease-in-out;
 }
 
+.c-player--controls .volume-btn {
+    background: none;
+    padding: 20px 0 20px 7px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: #888;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.5s ease-in-out;
+    min-width: 30px;
+    vertical-align: middle;
+}
+
 .c-player--controls .skip-btn:hover {
     color: #FFF;
 }
 
 .c-player--controls .play-btn:hover {
     background-color: #AAA;
+}
+
+.c-player--controls .volume-btn:hover .c-player--controls--range input[type="range"] {
+    color: #FFF;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+.c-player--controls--range {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-player--controls--currentTime input {
+    width: 250px;
+    vertical-align: middle;
+}
+
+.c-player--controls--volume input {
+    width: 50px;
+    height: 2px;
+    vertical-align: middle;
+    margin-left: 20px;
 }
