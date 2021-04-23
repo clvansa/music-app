@@ -1,13 +1,168 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background-color: #ddd;
+}
+
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.c-player {
+    display: block;
+    background-color: #313131;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset 6px 6px 12px rgba(255, 255, 255, 0.4);
+    width: 450px;
+}
+
+.c-player>h4 {
+    color: #FFF;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+.c-player>p {
+    color: #AAA;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    max-width: 350px;
+}
+
+.c-player>p>strong {
+    color: #FFF;
+    text-transform: none;
+}
+
+.c-player--details .details-img {
+    position: relative;
+    width: fit-content;
+    margin: 50px auto;
+    z-index: 10;
+}
+
+.c-player--details .details-img>.span--pause {
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    border-radius: 50%;
+    border: 10px solid #ffce00;
+}
+
+.c-player--details .details-img>.span--play::before {
+    content: "";
+    background-color: none;
+    width: 102%;
+    height: 102%;
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    border-radius: 50%;
+    z-index: 100;
+    border: 10px solid #AAA;
+    animation: play 10s alternate 0s infinite;
+}
+
+@keyframes play {
+    0% {
+        transform: rotate(360deg);
+        border-color: orange;
+    }
+    25% {
+        transform: rotate(360deg);
+        border-color: red;
+    }
+    50% {
+        transform: rotate(360deg);
+        border-color: yellow;
+    }
+    75% {
+        transform: rotate(360deg);
+        border-color: green;
+    }
+    100% {
+        transform: rotate(360deg);
+        border-color: skyblue;
+    }
+}
+
+.c-player--details .details-img img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    max-width: 250px;
+    border-radius: 50%;
+    box-shadow: -6px -6px 12px rgba(0, 0, 0, 0.8), 6px 6px 12px rgba(255, 255, 255, 0.4);
+}
+
+.c-player--details .details-title {
+    font-size: 28px;
+    color: #EEE;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -2px -2px 12px rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.c-player--details .details-artist {
+    font-size: 20px;
+    color: #AAA;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -2px -2px 12px rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.c-player--controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.c-player--controls .play-btn {
+    display: flex;
+    margin: 0 30px;
+    padding: 20px;
+    border-radius: 50%;
+    border: 0px;
+    outline: none;
+    background-color: #ffce00;
+    color: #FFF;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.c-player--controls .skip-btn {
+    background: none;
+    padding: 20px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: #888;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.5s ease-in-out;
+}
+
+.c-player--controls .skip-btn:hover {
+    color: #FFF;
+}
+
+.c-player--controls .play-btn:hover {
+    background-color: #AAA;
 }
