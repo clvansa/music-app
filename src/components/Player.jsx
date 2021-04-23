@@ -7,7 +7,6 @@ function Player(props) {
     const audioEl = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false)
 
-    console.log(audioEl)
     useEffect(() => {
         if (isPlaying) {
             audioEl.current.play()
