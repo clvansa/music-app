@@ -189,11 +189,8 @@ body {
     background-color: #AAA;
 }
 
-.c-player--controls .volume-btn:hover .c-player--controls--range input[type="range"] {
+.c-player--controls .volume-btn:hover {
     color: #FFF;
-    opacity: 1;
-    visibility: visible;
-    display: flex;
 }
 
 .c-player--controls--range {

@@ -5,7 +5,7 @@ import { faPlay, faPause, faForward, faBackward, faVolumeOff, faVolumeUp } from 
 function PlayerControls({ isPlaying, setIsPlaying, skipSong, audio }) {
     const [volume, setVolume] = useState(1);
     const [seeking, setSeeking] = useState(0);
-    const [muted, setMuted] = useState(!true);
+    const [muted, setMuted] = useState(true);
 
     
     useEffect(() => {
